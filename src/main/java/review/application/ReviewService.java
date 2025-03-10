@@ -7,8 +7,16 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import review.application.dto.request.ReviewCreateRequest;
+import review.application.dto.request.ReviewUpdateRequest;
+import review.application.dto.response.ReviewListResponse;
+import review.application.dto.response.ReviewResponse;
 import review.domain.repository.ReviewRepository;
 import review.domain.repository.vo.Review;
+import review.enums.UserRoleEnum;
+import review.exception.ReviewAlreadyExistsException;
+import review.exception.ReviewForbiddenException;
+import review.exception.ReviewNotFoundException;
 
 import java.math.BigDecimal;
 import java.util.UUID;
